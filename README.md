@@ -18,21 +18,18 @@ npm start - запуск сервера в dev режиме<br/>
 ## В проекте готовая сборка для поектирования React + pug
 
 
-## Заметка: при написании компонента, используйте функции, а не переменные
+## Заметка: при написании компонента, используйте функции или классы, а не переменные
 ```
 const App = pug`
-div
+div                      }=> <div /> + error
   |Hello world
 `
-рендер -> error <div />
-
 
 -------
 
 const App = () => pug`
-div                      }=>  <div>Hello world
+div                      }=>  <div>Hello world</div>
   |Hello world
 `
-рендер -> <div>Hello world</div> - OK
 
 ```
