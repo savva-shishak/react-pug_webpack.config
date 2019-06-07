@@ -10,18 +10,20 @@ body{
         background-size: 100%;
     }
     #box{
-        background-color: rgba(69, 82, 201, 0.589);
+        background-color: #5545FF;
         height: 25%;
         width: 25%;
         top: 37.5%;
         left: 37.5%;
+        opacity: 0.5;
     }
     #box2{
-        background-color: rgba(255, 255, 255, 0.171);
+        background-color: #FFE445;
         height: 30%;
         width: 30%;
         top: 35%;
         left: 35%;
+        opacity: 0.5;
     }
     .fix{
         position: fixed;

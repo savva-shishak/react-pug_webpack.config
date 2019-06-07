@@ -4,16 +4,20 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
+  entry: './src/index.jsx',
+  output: {
+    filename: 'main.js'
+  },
   module: {
     rules: [
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
+         test: /\.jsx?$/, // определяем тип файлов
+         exclude: /(node_modules)/,  // исключаем из обработки папку node_modules
+         loader: "babel-loader",   // определяем загрузчик
+         options:{
+             presets:["@babel/preset-env", "@babel/preset-react"]    // используемые плагины
+         }
       },
-
       {
         test: /\.pug$/,
         use: [
@@ -49,8 +53,6 @@ module.exports = {
       filename: "./index.html"
     }),
     new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
       filename: "[name].css",
       chunkFilename: "[id].css"
     }),
